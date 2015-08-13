@@ -33,8 +33,7 @@ namespace WindowsFormsApplication1
         private recordSound recorder = new recordSound();
 
         //测试github
-        //版本控制测试
-        //版本控制测试
+        //版本控制测试，需要留下评论 
         private WaveFormat createWaveFormat()
         {
             WaveFormat wformat = new WaveFormat();
