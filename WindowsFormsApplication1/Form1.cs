@@ -30,31 +30,33 @@ namespace WindowsFormsApplication1
             textBox1.Text = token_Text;
         }
 
-        //private recordSound recorder = new recordSound();
+        private recordSound recorder = new recordSound();
 
+        //测试github
+        //版本控制测试
+        //版本控制测试
+        private WaveFormat createWaveFormat()
+        {
+            WaveFormat wformat = new WaveFormat();
+            wformat.FormatTag = WaveFormatTag.Pcm;
+            wformat.SamplesPerSecond = Int32.Parse(comboBox3.SelectedText);
+            wformat.BitsPerSample = short.Parse(comboBox4.SelectedText);
+            wformat.Channels = short.Parse(comboBox5.SelectedText);
+            wformat.BlockAlign = (short)(wformat.Channels * (wformat.BitsPerSample / 8));
+            wformat.AverageBytesPerSecond = wformat.BlockAlign * wformat.SamplesPerSecond;
+            return wformat;
+        }
 
-        //private WaveFormat createWaveFormat()
-        //{
-        //    WaveFormat wformat = new WaveFormat();
-        //    wformat.FormatTag = WaveFormatTag.Pcm;
-        //    wformat.SamplesPerSecond = Int32.Parse(comboBox3.SelectedText);
-        //    wformat.BitsPerSample = short.Parse(comboBox4.SelectedText);
-        //    wformat.Channels = short.Parse(comboBox5.SelectedText);
-        //    wformat.BlockAlign = (short)(wformat.Channels * (wformat.BitsPerSample / 8));
-        //    wformat.AverageBytesPerSecond = wformat.BlockAlign * wformat.SamplesPerSecond;
-        //    return wformat;
-        //}
+        private void button3_Click(object sender, EventArgs e)
+        {
+            recorder.mWavFormat = createWaveFormat();
+            string wavFile = null;
+            //wavFil
+        }
 
-        //private void button3_Click(object sender, EventArgs e)
-        //{
-        //    recorder.mWavFormat = createWaveFormat();
-        //    string wavFile = null;
-        //    //wavFil
-        //}
-
-        //private void button4_Click(object sender, EventArgs e)
-        //{
-        //    string wavFile = null;
-        //}
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string wavFile = null;
+        }
     }
 }
